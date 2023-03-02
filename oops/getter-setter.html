@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Class getter-setter example</h2>
+     <script>
+        class Person{
+            constructor(name){
+                this._name=name;
+            }
+            get name(){
+                return this._name;
+            }
+            set name(newName){
+                this._name=newName
+            }
+        }
+        const obj=new Person("Neelam")
+        console.log(obj.name)
+        obj.name="amit"
+        console.log(obj.name)
+     </script>
+</body>
+</html>

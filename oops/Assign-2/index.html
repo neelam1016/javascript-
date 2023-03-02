@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+                        <div class="card-body py-4 px-4 px-md-5">
+
+                            <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+                                <i class="fas fa-check-square me-1"></i>
+                                <u>My Todo-s</u>
+                            </p>
+                            <div class="pb-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <input type="text" class="form-control form-control-lg"
+                                                id="exampleFormControlInput1" placeholder="Add new...">
+                                            <div>
+                                                <button type="button" id="add" class="btn btn-primary" >Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table mb-4" id="table">
+                                <thead>
+                                    <tr >
+                                        <th class="col-1">Sr No.</th>
+                                        <th class="col-7 text-center">Task</th>
+                                        <th class="col-2 ">Delete</th>
+                                        <th class="col-2 ">Edit</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody id="body">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        var add = document.getElementById("add");
+        var srno = 0;
+        var str1='';
+        var str2='';
+        var arr = [0];
+        var delarr=[];
+        add.addEventListener("click", function () {
+            var input = document.getElementById("exampleFormControlInput1").value;
+            var table=document.getElementById("table")
+            var body=document.getElementById("body")
+            srno = srno + 1;
+
+            
+            str1 =         `
+                            <tr>
+                                <td>${srno}</td>
+                                <td>${input}</td>
+                                <td><button type="button" onclick=del(this) class="btn bg-danger"><i class="bi bi-trash"></i></button></td>
+                                <td><button type="button" class="btn bg-success"><i class="bi bi-pencil-square"></i></button></td>
+                            </tr>
+                           `
+            str2+=str1;
+                           arr.push(str1);
+                           document.getElementById("body").innerHTML=str2;                                                                      
+                           document.getElementById("exampleFormControlInput1").value="";
+
+        })
+        function del(no){ 
+            var p=o.parentNode.parentNode;
+         p.parentNode.removeChild(p);
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

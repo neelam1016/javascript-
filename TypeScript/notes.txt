@@ -1,0 +1,116 @@
+--> Typescript :- It is a super set of javascript.It builds on top of javascript. We can write some advance code (object oriented code). We write typescript code , the typescript compilar compile into plain javascript code(es 5).
+  -> extension is .ts 
+
+  Typescript  ===> Typescript Compilar ===> Javascript 
+      -> It uses the Javascript syntaxes (all es 6 features) and we adds additional features for supporting types 
+    -> Features of typescript 
+        -> Strongly type language (we can define datatype)
+        -> Support OOPS features like access modifiers , abstract class , interfaces , generics etc.
+        -> It improves our productivity 
+    --> Download and install Node Js 
+      https://nodejs.org/en/download/
+         -> when we install node , npm is also install with it 
+         npm :- node package manager. with the help of it we can install all 3rd party node modules 
+         -> node -v 
+         -> npm -v 
+      -> How we install typescript 
+         npm install typescript --g 
+      -> How we run or execute typescript program 
+          folder/first.ts 
+           let add=(a,b)=> (a+b);
+           console.log("The sum is "+add(5,6));
+         -> open folder in cmd / terminal 
+            tsc first.ts (compile and generate .js file)
+            node first.js 
+               The sum is 11
+        -> Type Annotations : with the help of it we can define datatypes 
+           syntex :
+           let variablename:type=value;
+           eg:
+           let age:number=23 
+             -> Number (integer | decimal )
+               let age:number=23 
+             -> string 
+               let name:string="sumit"
+             -> boolean 
+               let status:boolean=true|false;
+             -> object 
+               let resData:object;
+               resData={ }
+             -> Array 
+               let students:string[]=['a','b','c']
+             -> Tuple : fixed number of elements with known types 
+               let data:[number,string,boolean]=[101,'anuj',true]
+             -> enum :- It is a group of named constant values.
+               enum Month {Jan , Feb , Mar ,......, Dec};
+               emon Days{Mon, Tue,...., Sun}   
+            -> any :- store a value of any type in a variable 
+              resData:any;
+            -> void : return type of a function which dont return any value 
+               function xyz(message):void{
+                console.log(message)
+               }
+            -> union : we store a value of one or several type in a variable 
+               let result:number|string;
+    -> Access Modifiers 
+      -> private :- accessible within class 
+      -> public :- anywhere
+      -> protected :- within a class and his derived class
+
+    -> Abstract Class :- It is used to define common begaviors for derived classes to extends. It cannot be instantiated directly.
+     It containes one or more abstract methods (doesnot conatin implementaion)
+     eg:
+       abstract class Employee{
+    constructor(private fname:string,private lname:string){}
+    abstract getSalary():number;
+    get fullName():string{
+        return `${this.fname} ${this.lname}`;
+    }
+    fullDetails():string{
+        return `${this.fullName} got ${this.getSalary()}`
+    }
+}
+class EmpDetails extends Employee{
+     constructor(fname:string,lname:string,private salary:number){
+         super(fname,lname)
+     }
+     getSalary(): number {
+         return this.salary;
+     }
+}
+const obj=new EmpDetails('anuj','singh',80000);
+console.log(obj.fullDetails());
+
+--> Interface :- are define the contracts within our code. It is just like a skelaton where we can declare our common properties and methods , we can define it where they implements.
+  -> define with interface keyword 
+  -> and in any class with implements 
+   eg:
+ interface Person{
+     fname:string;
+     lname:string;
+ }
+ --> use interface in a function 
+   function getFullName(person:Person){
+      return `${person.fname} ${person.lname}`;
+   }
+   let sumit={
+     fname:'sumit',
+     lname:'joshi'
+   }
+   console.log(getFullName(sumit))
+
+   --> Typescript Generics :- Allow us to write the reusable and generalized form of functions , classes and interfaces.
+     eg:
+       function getRandomElement<T>(items:T[]):T{
+          let randomIndex=Math.floor(Math.random()*items.length);
+          return items[randomIndex];
+       } 
+    -> Generic class :- It has a generic type parameter list in an <> follows the name of the class.
+       class className<T>{
+
+       }
+    -> interface xyz<K,V>{
+         key:K;
+         value:V;
+    }
+         

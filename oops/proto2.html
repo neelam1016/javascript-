@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Prototype Example</h2>
+    <script>
+        var Car = function(){
+            this.speed=50;
+        }
+        Car.prototype.acc=function(){
+            this.speed+=70;
+        }
+        Car.prototype.checkspeed=function(){
+            console.log("the speed is " + this.speed)
+        }
+        var obj=new Car();
+        obj.checkspeed();
+        obj.acc();
+        obj.checkspeed();
+
+    </script>
+    
+</body>
+</html>

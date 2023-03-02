@@ -1,0 +1,16 @@
+<!Doctype html>
+<html>
+<body>
+    <h2> Callback example</h2>
+    <script>
+      function greet(name,callback){
+         console.log(`Hello world`);
+         callback(name);
+      }
+      function callme(name){
+        console.log(`Hi ${name}`);
+      }
+      setTimeout(greet,2000,'sumit joshi',callme)
+    </script>
+</body>
+</html>

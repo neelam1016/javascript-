@@ -1,0 +1,16 @@
+<!Doctype html>
+<html>
+<body>
+    <h2> Callback example</h2>
+    <script>
+      function greet(name,callback){
+         console.log(`Hi ${name}`);
+         callback();
+      }
+      function callme(){
+        console.log("I am callback function")
+      }
+      greet('sumit joshi',callme);
+    </script>
+</body>
+</html>

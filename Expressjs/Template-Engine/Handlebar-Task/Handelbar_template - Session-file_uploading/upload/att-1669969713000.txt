@@ -1,0 +1,111 @@
+--> MongoDb :- It is an open-source, cross-platform document based database.It is developed by MongoDB Inc. and categorized as a NoSQL database.
+  -> Easy to use :- It is a document-oriented database. It used the concept of the document to store data, which is more flexible then RDBMS.
+  -> MongoDB is schema less.
+  -> Rich features :- It allow us insert , update , delete and select data.Indexing , aggregation, file storage etc.
+  -> High Performance 
+     -> MongoDB Installation 
+     https://www.mongodb.com/try/download/community
+      Atlas  :- online mongodb server
+      -> MongoDB compass :- GUI 
+      -> Data formats : in mongodb we deal with JSON and BSON formats.
+         -> JSON :- stands for Javascript Object Notation. It is a collection of fields and values in a structured formet. for eg:
+           {
+              "fname":"sumit",
+              "lname":"joshi",
+              "age":35,
+              "skills":["Javascript","Mean","Mern" ,"Php", "React Native","Devlops"]
+           }
+         -> BSON : Binary Json , which is a binary-coded serialization of json-like documents.
+         -> Documents : It stored data records as BSON documents , 
+            {
+                _id:ObjectID("sfhjhjhh--"),
+                fname:"anuj",
+                lname:"singh",
+                author:{
+                     fname:"sumit",
+                     lname:"joshi"
+                }
+            }
+            -> _id : reserve field and used it to uniquely identify the document.
+            -> Field names cannot conatin null characters
+            -> Collection : Mongodb stores documents in a collection. It is a group of document. In sql it is known as table.
+               -> documents in sql known as Rows
+               -> Unlike a table that has a fixed schema, a collection has a dynamic schema.
+            -> Database : MongoDB stores collection into a database.A single instance of MongoDB can host multiple databases.
+              -> reserved database name 
+                admin , local , config 
+                 show dbs;// show all databases name 
+            -> How we create or use database 
+                 use dbname;// it create and use 
+            -> db : current db name 
+            -> Create Collection and insert data 
+              db.collectionname.insertOne({
+                 key:'value',
+                 key:'value'
+              })
+              -> show collections;
+              -> db.collectionname.find() , findOne()
+                .pretty()
+              -> Update 
+              db.collectionname.updateOne(condition,{$set:{updated data}})
+              eg:
+              db.Emp.updateOne({name:'sumit joshi'},$set:{city:'Delhi'})
+            -> delete 
+             db.collectionname.deleteOne({condition})
+             eg:
+             db.Emp.deleteOne({name:'amit joshi'});
+
+             Person 
+                fname 
+                lname 
+                age 
+                city 
+                salary 
+                  insertOne 
+                  updateOne
+                  deleteOne
+                  findOne
+                  find (all)
+                -> MongoDb Datatypes
+                Null 
+                 {
+                    "isbn":null 
+                 }
+                Boolean ,Number,String
+                   {
+                    full_name:"sumit joshi",
+                     status:true ,
+                     age:23
+                   }
+                 Date {
+                      "updated_at":new Date()
+                 }
+                 Array 
+                   {
+                      skills :["A","B","C"]
+                   }
+                Embedded Document 
+                   {
+                      "title":"MongoDB Tutorial",
+                      "pages":500,
+                      "author":{
+                          "fname":"anuj",
+                          "lname":"singh"
+                      }
+                   }
+                -> ObjectId (_id) : 24 hexadecimal digits 
+            -> Adding new document 
+               insertOne()
+               insertMany
+                 db.collectionname.insertMany(
+                    [
+                        {},
+                        {},
+                        {}
+                    ]
+                 )
+             -> Selecting Documents 
+                findOne() 
+                find()
+             -> updateOne() , updateMany()
+             -> deleteOne(), deleteMany()

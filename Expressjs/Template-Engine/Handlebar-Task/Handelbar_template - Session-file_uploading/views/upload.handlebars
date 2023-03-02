@@ -1,0 +1,14 @@
+{{!-- navbar --}}
+{{> header}}
+<main>
+    <div class="container">
+        <div class="w-50 p-5 mt-5 border rounded mx-auto shadow">
+            <form method="post" action="/uploadfile?_csrf={{csrf}}" enctype="multipart/form-data">
+                <input type="file" id="myFile" name="att">
+
+            
+                <button type="submit" class="btn btn-warning" name="sub">Upload File</button>
+            </form>
+        </div>
+    </div>
+</main>

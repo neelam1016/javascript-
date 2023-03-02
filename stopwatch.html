@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Stop Watch</h2>
+    <p id="target"></p>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <script>
+        count=0;
+        function counter(){
+            count++;
+            document.getElementById("target").innerHTML=count;
+
+        }
+        function start()
+        {
+            interval=setInterval(counter,1000);
+
+        }
+        function stop()
+        {
+            clearInterval(interval)
+            count=0;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Async-Await real-time example</h2>
+    <script>
+        function getUser(userId,callback){
+          console.log("Get user from the database");
+          setTimeout(()=>{
+              callback({userId:userId,username:'sumit'})
+          },2000)
+      }
+      function getServices(user,callback){
+          console.log(`Get services of ${user.username} `);
+          setTimeout(()=>{ callback(['a','b','c','d']) },3000)
+      }
+      function getServiceCost(services,callback){
+          console.log(`Calculate service costs of ${services} `);
+          setTimeout(()=>{ callback(services.length*500)},3000)
+      }
+      async function showServiceCost(){
+        let user = await getUser(101);
+        let services = await getServices(user);
+        let cost=await getServiceCost(services);
+        console.log(`the service cost is ${cost}`)
+      }
+      showServiceCost();
+    </script>
+</body>
+</html>

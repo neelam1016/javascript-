@@ -1,0 +1,21 @@
+{{> header}}
+<div class="container">
+          <h2> Reset Password</h2>
+          {{#if errMsg}}
+             <div class="alert alert-danger"> {{errMsg}}</div>
+          {{/if}}
+             {{#if succMsg}}
+             <div class="alert alert-success"> {{succMsg}}</div>
+          {{/if}}
+          <form method="post" action="/postresetpassword">
+            <div class="form-group">
+                <label> Password </label>
+                <input type="password" name="password" class="form-control"/>
+            </div>
+           <input type="hidden" name="id" value="{{uid}}"/>
+           <input type="hidden" name="token" value="{{token}}"/>
+            <input type="hidden" name="_csrf" value="{{csrf}}"/>
+            <input type="submit" value="Submit" class="btn btn-success"/>
+            
+          </form>
+       </div>

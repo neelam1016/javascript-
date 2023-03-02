@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> JavaScript Calculator </title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script>
+       
+        function dis(val) {
+            document.getElementById("calc").value += val
+        }
+
+        var dict = {};
+        function solve() {
+            let x = document.getElementById("calc").value
+            let y = eval(x)
+            document.getElementById("calc").value = y
+            dict[x]=y;  
+
+            
+        }
+        function clr() {
+            document.getElementById("calc").value = ""
+        } 
+
+        function data()
+        {
+            var str='';
+            for (const key of Object.keys(dict)) {
+            
+            str += key + "=" + dict[key] + "||"
+          
+        }
+        document.getElementById("info").innerHTML=str;
+    }
+        
+    </script>
+    <h1 class="heading"> Calculator Program in JavaScript </h1>
+    <div class="formstyle">
+        <form >
+             <div class="form1">
+            <input id="calc" type="text"> <br> <br>
+            <input type="button" value="1" onclick="dis('1')">
+            <input type="button" value="2" onclick="dis('2')">
+            <input type="button" value="3" onclick="dis('3') ">
+            <input type="button" value="+" onclick="dis('+')">
+            <br> <br>
+
+            <input type="button" value="4" onclick="dis('4')">
+            <input type="button" value="5" onclick="dis('5')">
+            <input type="button" value="6" onclick="dis('6')">
+            <input type="button" value="-" onclick="dis('-')">
+            <br> <br>
+
+            <input type="button" value="7" onclick="dis('7')">
+            <input type="button" value="8" onclick="dis('8') ">
+            <input type="button" value="9" onclick="dis('9')">
+            <input type="button" value="*" onclick="dis('*')">
+            <br> <br>
+
+
+            <input type="button" value="/" onclick="dis('/')">
+            <input type="button" value="0" onclick="dis('0')">
+            <input type="button" value="." onclick="dis('.')">
+            <input type="button" value="=" onclick="solve()">
+            <br>
+        </div>
+            <input type="button" value="Clear All" onclick="clr()" class="clear">
+            <br> 
+            <textarea name="" id="info" cols="30" rows="10" style="margin-top:10px; margin-left:23px;"></textarea>
+            <input type="button" value="History" onclick="data()" class="History">
+            <br>
+        </form>
+    </div>
+</body>
+
+</html>

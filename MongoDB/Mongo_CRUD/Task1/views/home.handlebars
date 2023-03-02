@@ -1,0 +1,25 @@
+{{> nav}}
+
+ {{#each data}}
+
+  <div class="card " style="width: 30%;">
+  <img src="{{url}}" class="card-img-top" alt="{{_id}}"  width="100px" height="100px">
+  <div class="card-body">
+    <h5 class="card-title">Name Product-{{name}}</h5>
+    <p class="card-text">Description-{{description}}</p>
+    <p class="card-text">Price-{{price}}</p>
+    <p class="card-text">Quantity-{{quantity}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <div class="d-flex flex-row">
+    <form action="/updateform/{{_id}}" method="GET">
+ <li class="list-group-item mx-5 mt-3"><input type="submit" class="btn btn-success" value="Edit"/></li>
+    </form>
+    <form action="/deleteproduct/{{_id}}">
+<li class="list-group-item mx-5 mt-3"><input type="submit" class="btn btn-success" value="Delete"/></li>
+    </form>
+    </div>
+  </ul>
+  
+  </div>
+     {{/each}}

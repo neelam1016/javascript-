@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Class example</h2>
+    <script>
+    class Car{
+        constructor(){
+            this.speed=50;
+        }
+        acc(){
+            this.speed+=70;
+        }
+        checkspeed(){
+            console.log(`The speed is ${this.speed}`)
+
+        }
+    }
+    const obj = new Car();
+    obj.checkspeed();
+    obj.acc();
+    obj.checkspeed();
+</script>
+</body>
+</html>

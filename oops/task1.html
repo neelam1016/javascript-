@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>get all Users from jsonplaceholder api with fetch method</h2>
+    <div >
+        <table>
+        <tr >
+            <th>id</th>
+            <th>FirstName</th>
+            <th>Email</th>
+            <th>UserName</th>
+            <th>Phone</th>
+            
+       <tbody id="target" >
+
+       </tbody>
+        <br> 
+    </table>
+    </div>
+    <script>
+        const API = "https://dummyjson.com/users";
+        fetch(API)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.users)
+                let str = '';
+                data.users.forEach((res) => {
+                    str += `
+                            <tr>
+                                <td>${res.id}</td>
+                                <td>${res.firstName}</td>
+                                <td>${res.email}</td>
+                                <td>${res.username}</td>
+                                <td>${res.phone}</td>
+                            </tr>
+                           `
+                 });
+                document.getElementById("target").innerHTML = str;
+            })
+            .catch(err => console.log(err))
+    </script>
+</body>
+
+</html>

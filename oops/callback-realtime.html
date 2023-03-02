@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<body>
+    <h2> Callback realtime example</h2>
+    <script>
+      function getUser(userId,callback){
+          console.log("Get user from the database");
+          setTimeout(()=>{
+              callback({userId:userId,username:'sumit'})
+          },2000)
+      }
+      function getServices(user,callback){
+          console.log(`Get services of ${user.username} `);
+          setTimeout(()=>{ callback(['a','b','c','d']) },3000)
+      }
+      function getServiceCost(services,callback){
+          console.log(`Calculate service costs of ${services} `);
+          setTimeout(()=>{ callback(services.length*500)},3000)
+      }
+      //nested callback function 
+         getUser(101,(user)=>{
+             getServices(user,(services)=>{
+                getServiceCost(services,(cost)=>{
+                     console.log(`The service cost is ${cost}`)
+                })
+             })
+         })
+    </script>
+</body>
+</html>

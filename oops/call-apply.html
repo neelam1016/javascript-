@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>call-apply example</h2>
+    <script>
+        var empdetails ={
+            fname : "neelam",
+            lname : "gali",
+            getfullname : function(){
+                return this.fname+ " " + this.lname;
+            }
+        }
+        var detailname = function(a,b){
+            console.log(this.getfullname()+' loves'+a+' and '+b)
+        }
+        detailname.call(empdetails,'x','y');
+        detailname.apply(empdetails,['c','d']);
+    </script>
+</body>
+</html>

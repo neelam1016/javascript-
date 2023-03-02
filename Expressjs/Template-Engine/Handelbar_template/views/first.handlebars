@@ -1,0 +1,10 @@
+{{> header}}
+{{#if title}}
+<h2> {{title}}</h2>
+ <ul>
+    {{#each mycourses}}
+        <li>{{this}}</li>
+    {{/each}}
+ </ul>
+{{/if}} 
+{{> footer}}

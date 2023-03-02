@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>get all Quotes from jsonplaceholder api with fetch method</h2>
+    <div id="target">
+        
+    </div>
+    <script>
+        const API = "https://dummyjson.com/quotes";
+        fetch(API)
+            .then(res => res.json())
+            .then(data => {
+                let str = '';
+                data.quotes.forEach((res) => {
+                    str += `<div style="background:aqua;text-align:center;margin:50px; padding:0px 30px 30px 30px;"><h3 style="background:pink;"> Quote ${res.id} </h3> <p style="font-weight:bold;"> ${res.quote} </p></div>`       
+                 });
+                document.getElementById("target").innerHTML = str;
+            })
+            .catch(err => console.log(err))
+    </script>
+</body>
+
+</html>

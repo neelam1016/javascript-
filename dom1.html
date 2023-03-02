@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Dom Implementation</title>
+    </head>
+    <body>
+        <h2> getElementById Example</h2>
+        <p id="target"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptate nobis eius commodi dolorem veritatis accusamus reprehenderit magni consequuntur expedita dolores, delectus perspiciatis incidunt corporis nesciunt ad fugiat hic reiciendis!</p>
+           <button id="btn">Click Here</button>
+        <script>
+             var btn=document.getElementById("btn");
+             btn.addEventListener("click",function(){
+                var para=document.getElementById("target");
+                //read content of the para 
+                var data=para.innerHTML;//get content 
+                alert(data)
+                //update content of the para 
+                para.innerHTML="hello guys how r u !";//set content
+                //apply styles 
+                para.style.color="green";
+                para.style.border="2px solid red";
+             })
+        </script>
+    </body>
+</html>

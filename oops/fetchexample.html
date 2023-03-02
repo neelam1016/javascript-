@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>get all posts from jsonplaceholder api with fetch method</h2>
+    <div id="target"></div>
+    <script>
+        const API = "https://dummyjson.com/posts";
+        fetch(API)
+        .then(res=> res.json())
+        .then(data => {
+            let str='';
+            data.posts.forEach((res) => {
+                  str += `<h3> ${res.title} </h3> <p> ${res.body} </p> <hr/>`                
+            });
+            document.getElementById("target").innerHTML=str;
+        })
+        .catch(err=>console.log(err))
+    </script>
+</body>
+</html>

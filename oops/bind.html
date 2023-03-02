@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h2>bind example</h2>
+    <!-- <script>
+        const person = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const member = {
+  firstName:"Hege",
+  lastName: "Nilsen",
+}
+
+let fullName = person.fullName.bind(member);
+console.log(fullName());
+        
+    </script> --> 
+    <script>
+      var empdetails={
+              fname:'sumit',
+              lname:'joshi',
+              getFullName:function(){
+                 return this.fname+' '+this.lname
+              }
+          }
+          var detailName=function(){
+             console.log(this.getFullName() +' I choose you!')
+          }
+          var alldetails=detailName.bind(empdetails);
+          alldetails();
+       
+    </script>
+</body>
+</html>

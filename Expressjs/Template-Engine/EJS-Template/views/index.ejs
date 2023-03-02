@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Ejs Template</title>
+    </head>
+    <body>
+        <%- include('./partials/header'); %>
+        <section>
+            <h2><%= heading %></h2>
+            <ul>
+                <% category.forEach
+                ((val)=>{%>
+                <li><%= val %></li><% })%>
+            </ul>
+        </section>
+        <%- include(./partials/footer.ejs); %>
+    </body>
+</html>

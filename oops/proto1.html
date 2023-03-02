@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Prototype Example</h2>
+    
+    <script>
+        // var person={'name':'sumit'};
+        // console.log(person)
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        Person.prototype.gender="male"
+        var obj=new Person("sumit",34);
+        var obj1=new Person("amit",33);
+        console.log(obj.name+" is "+obj.gender);
+        console.log(obj1.name+" is "+obj1.gender)
+    </script>
+</body>
+</html>

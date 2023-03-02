@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Stop Watch</h2>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    
+    <script>
+        let count = 0
+        var arr = ['red', 'green', 'yellow', 'orange', 'blue']
+
+        function counter() {
+            document.bgColor = arr[count];
+            count += 1;
+            if (count == 4) {
+                count = 0;
+            }
+        }
+        function start() {
+            interval = setInterval(counter, 3000);
+
+
+        }
+        function stop() {
+            clearInterval(interval)
+            count = 0;
+        }
+    </script>
+</body>
+
+</html>

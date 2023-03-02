@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Create Element Example</h2>
+    <ul id="menu"></ul>
+    <button id="btn">Click Here</button>
+    <script>
+        var btn=document.getElementById("btn");
+        btn.addEventListener("click",function()
+        {
+            var menus=["mens","womens","kids"];
+            menus.forEach(function(val)
+            {
+                var li=document.createElement("li");
+                li.innerHTML=val;
+            document.getElementById("menu").appendChild(li);
+            })
+            
+        })
+
+    </script>
+</body>
+</html>

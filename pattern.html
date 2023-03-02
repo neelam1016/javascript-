@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+</head>
+<body>
+    <h2>Pattern</h2>
+    <script>
+        let num=parseInt(prompt("enter a number "))
+        let space = "&nbsp"
+        for(let i = 0 ; i < num ; i++)
+        {
+            document.write(space.repeat(num-1-i))
+            for(let j=0 ; j<i ; j++)
+            {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

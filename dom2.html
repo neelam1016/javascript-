@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Dom Implementation</title>
+    </head>
+    <body>
+        <h2> getElementsByNameExample</h2>
+         Gender : <input type="radio" name="r1" value="male"/> Male 
+         <input type="radio" name="r1" value="female"/> Female <br/>
+           <button id="btn">Click Here</button>
+        <script>
+             var btn=document.getElementById("btn");
+             btn.addEventListener("click",function(){
+                var gender=document.getElementsByName("r1");
+                gender.forEach(function(data){
+                    if(data.checked){
+                        alert(data.value);
+                    }
+                })
+             })
+        </script>
+    </body>
+</html>

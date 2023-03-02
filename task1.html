@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+</head>
+
+<body>
+    <script>
+        var sub1 = parseInt(prompt("enter sub1 marks"));
+        var sub2 = parseInt(prompt("enter sub2 marks"));
+        var sub3 = parseInt(prompt("enter sub3 marks"));
+        var sub4 = parseInt(prompt("enter sub4 marks"));
+        var sub5 = parseInt(prompt("enter sub5 marks"));
+        let res = "";
+        let sum = 0;
+        let per = 0;
+        sum = sub1 + sub2 + sub3 + sub4 + sub5;
+        per = sum / 500 * 100;
+
+        if (per > 80) {
+            res = "A";
+        }
+        else if (per > 60 && per <= 80) {
+            res = "B";
+        }
+        else if (per > 45 && per <= 60) {
+            res = "C";
+        }
+        else {
+            res = "Fail";
+        }
+        alert("Total Marks " + sum + " " + "Percentage " + per + " " + "Grade " + res)
+    </script>
+</body>
+
+</html>
